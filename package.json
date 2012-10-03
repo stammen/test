@@ -4,11 +4,13 @@
     "private": true,
     "scripts": {
         "start": "node app",
-        "test": "make test"
+        "test": "./node_modules/nodeunit/bin/nodeunit test"
     },
     "dependencies": {
         "express": "3.0.0rc5",
-        "nodeunit": "*",
         "jade": "*"
+    },
+    "devDependencies": {
+       "nodeunit": "*"
     }
 }
