@@ -1,4 +1,4 @@
-PACKAGE = nodeunit
+PACKAGE = test
 NODEJS = $(if $(shell test -f /usr/bin/nodejs && echo "true"),nodejs,node)
 
 test:
