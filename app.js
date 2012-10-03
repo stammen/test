@@ -3,10 +3,9 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+var foo = require('./lib/foo');
 
 var app = express();
 
@@ -26,9 +25,11 @@ app.configure('development', function () {
     app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+app.get('/',function(req, res){
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end(foo.hello() + '!\n');
 
+});
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
 });
